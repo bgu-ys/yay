@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for carina 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- INTRO SCREEN -->
+  <div class="screen" id="introScreen">
+    <h1 class="main-title">
+      <img src="images/blackcat.png" class="emoji-img">
+      are you my valentine?
+      <img src="images/goose.png" class="emoji-img">
+    </h1>
+    <p class="subtitle">
+      before you begin, we first need to confirm your identity
+    </p>
+
+    <div class="recaptcha-box" id="recaptchaBox">
+      <div class="recaptcha-left">
+        <div class="checkbox" id="fakeCheckbox">
+          <div class="checkmark"></div>
+        </div>
+        <span class="recaptcha-text">I am yoon's baby</span>
+      </div>
+
+      <div class="recaptcha-right">
+        <img src="images/recaptcha.png" class="recaptcha-logo">
+        <div class="recaptcha-small-text">
+          loveCAPTCHA<br>
+          Privacy - Terms
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERIFICATION FAILED SCREEN -->
+  <div class="screen hidden" id="verificationFailed">
+    <h2 class="uh-oh-text">oh no!</h2>
+    <h1 class="big-text">we cannot confirm that you really are yoon's baby :(</h1>
+    <p class="caption-text">we'll need to ask a couple more questions to make sure</p>
+    <button id="verificationContinueBtn">CONTINUE</button>
+  </div>
+
+  <!-- QUESTION 1 -->
+  <div class="screen hidden" id="q1">
+    <div class="question-number">1)</div>
+
+    <div class="captcha-box">
+      <div class="captcha-header">
+        <small>Select all squares with</small>
+        <strong class="line-big">a cutie</strong>
+        <small>If there are none, click skip</small>
+      </div>
+
+      <div class="grid">
+        <div class="grid-item"><img src="images/1.png"></div>
+        <div class="grid-item"><img src="images/2.png"></div>
+        <div class="grid-item"><img src="images/3.png"></div>
+        <div class="grid-item"><img src="images/4.png"></div>
+        <div class="grid-item"><img src="images/5.png"></div>
+        <div class="grid-item"><img src="images/6.png"></div>
+        <div class="grid-item"><img src="images/7.png"></div>
+        <div class="grid-item"><img src="images/8.png"></div>
+        <div class="grid-item"><img src="images/9.png"></div>
+      </div>
+
+      <div class="button-container">
+        <button id="continueBtn">SKIP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div id="q2" class="screen hidden">
+    <div class="question-number">2)</div>
+    <div class="question-box">
+      <div class="question-title">there are hundreds of words that could be used describe my baby</div>
+      <div class="question-subtitle">write three words to describe yourself!!</div>
+
+      <div class="text-inputs">
+        <input id="word1" class="answer-input" type="text">
+        <input id="word2" class="answer-input" type="text">
+        <input id="word3" class="answer-input" type="text">
+      </div>
+
+      <button id="q2SubmitBtn">Submit</button>
+    </div>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="screen hidden" id="q3">
+    <div class="question-number">3)</div>
+
+    <div class="question-box">
+      <div class="big-white-box">
+        <div class="pattern-text">PATTERN RECOGNITION</div>
+        <div class="small-text">fill in the blank</div>
+      </div>
+
+      <!-- Blank display box -->
+      <div class="blank-box">
+        #:## ###'## ## _____ # #### ###
+      </div>
+
+      <div class="text-inputs">
+        <input type="text" id="q3Answer" class="answer-input" placeholder="Type your answer here">
+      </div>
+
+      <button id="q3SubmitBtn">SUBMIT</button>
+    </div>
+  </div>
+
+
+
+<!-- QUESTION 4 -->
+<div class="screen hidden" id="q4">
+  <div class="question-number">4)</div>
+
+  <div class="question-box">
+    <h1 class="big-text">solve my riddle to get the password!!!</h1>
+<!-- Hint button -->
+<div id="q4HintContainer" style="position: relative; display: inline-block; margin-left: 10px;">
+  <img src="images/hint.png" alt="Hint" id="q4HintBtn" style="width: 24px; height: 24px; cursor: pointer;">
+  <span id="q4HintText" style="display: none; font-size: 12px; margin-left: 8px; color: #000;">
+    there's no hint lol i just wanted to tell you ily
+  </span>
+</div>
+
+    <p class="riddle-text">
+        I live in a place of endless white,<br>
+        Where you’ve labored late into the night.<br>
+        I hold your words, your care, your art,<br>
+        A thousand thoughts packed from the heart.<br><br>
+
+        I am not a box, yet a gift I am,<br>
+        Shared through the net, not sealed with jam.<br>
+        I count in pages, not in days,<br>
+        A labyrinth of your love’s own ways.<br><br>
+
+        I fly unseen like a shuttle in play,<br>
+        Back and forth in a gentle ballet.<br>
+        The 35th holds the secret sign,<br>
+        The 5th of its kin reveals the line.<br><br>
+
+        What am I?
+    </p>
+
+    <div class="text-inputs">
+      <input type="text" id="q4Answer" class="answer-input" placeholder="Type your answer here">
+    </div>
+
+    <button id="q4SubmitBtn">SUBMIT</button>
+  </div>
+</div>
+
+
+
+<!-- QUESTION 5 -->
+<div class="screen hidden" id="q5">
+  <div class="question-number">5)</div>
+  <div class="question-box">
+    <div class="pattern-text">choose two heroes!!!!!!</div>
+<div class="hero-subtext">choose the two you would main on overwatch</div>
+
+    <div class="hero-selection-container">
+      <!-- Group 1: 2 rows x 5 columns -->
+      <div class="hero-group" id="group1">
+        <img src="images/hero1.webp" class="hero-item">
+        <img src="images/hero2.webp" class="hero-item">
+        <img src="images/hero3.webp" class="hero-item">
+        <img src="images/hero4.webp" class="hero-item">
+        <img src="images/hero5.webp" class="hero-item">
+        <img src="images/hero6.webp" class="hero-item">
+        <img src="images/hero7.webp" class="hero-item">
+        <img src="images/hero8.webp" class="hero-item">
+        <img src="images/hero9.webp" class="hero-item">
+        <img src="images/hero10.webp" class="hero-item">
+      </div>
+
+      <!-- Group 2: 2 rows (top:9, bottom:8), bottom centered -->
+      <div class="hero-group" id="group2">
+        <img src="images/hero11.webp" class="hero-item">
+        <img src="images/hero12.webp" class="hero-item">
+        <img src="images/hero13.webp" class="hero-item">
+        <img src="images/hero14.webp" class="hero-item">
+        <img src="images/hero15.webp" class="hero-item">
+        <img src="images/hero16.webp" class="hero-item">
+        <img src="images/hero17.webp" class="hero-item">
+        <img src="images/hero18.webp" class="hero-item">
+        <img src="images/hero19.webp" class="hero-item">
+        <img src="images/hero20.webp" class="hero-item">
+        <img src="images/hero21.webp" class="hero-item">
+        <img src="images/hero22.webp" class="hero-item">
+        <img src="images/hero23.webp" class="hero-item">
+        <img src="images/hero24.webp" class="hero-item">
+        <img src="images/hero25.webp" class="hero-item">
+        <img src="images/hero26.webp" class="hero-item">
+        <img src="images/hero27.webp" class="hero-item">
+        <img src="images/transparent.webp" class="hero-item">
+      </div>
+
+      <!-- Group 3: 2 rows x 4 columns -->
+      <div class="hero-group" id="group3">
+        <img src="images/hero28.webp" class="hero-item">
+        <img src="images/hero29.webp" class="hero-item">
+        <img src="images/hero30.webp" class="hero-item">
+        <img src="images/hero31.webp" class="hero-item">
+        <img src="images/hero32.webp" class="hero-item">
+        <img src="images/hero33.webp" class="hero-item">
+        <img src="images/hero34.webp" class="hero-item">
+        <img src="images/hero35.webp" class="hero-item">
+      </div>
+    </div>
+
+    <button id="q5SubmitBtn" class="hidden">Submit</button>
+  </div>
+</div>
+
+
+
+<!-- Question 6 -->
+<div id="q6" class="question-section hidden">
+  <div class="question-number">6)</div>
+
+  <div class="q6-top-center">
+    <h1 class="q6-title">KITTY BREAK!!</h1>
+    <p class="q6-subtext">pet the minmin</p>
+  </div>
+
+  <div class="q6-game-area">
+    <img src="images/minmin.png" alt="minmin" class="minmin-img" id="minminImg">
+    <img src="images/hand.png" alt="hand" class="hand-img" id="handImg">
+  </div>
+
+  <div class="q6-progress-container">
+    <div class="q6-progress-bar" id="q6Progress"></div>
+  </div>
+</div>
+
+<!-- Q6 GIF Overlay -->
+<div id="q6GifOverlay" class="hidden">
+  <img src="images/yay.gif" alt="YAY" id="yayGif">
+</div>
+
+
+
+
+
+
+
+
+<!-- Question 7 -->
+<div id="q7" class="question-section hidden">
+  <div class="question-number">7)</div>
+
+  <div class="q7-box">
+    <h2 class="q7-title">What is your favorite number?</h2>
+
+    <div class="q7-options">
+      <div class="q7-option" data-value="A">8</div>
+      <div class="q7-option" data-value="B">13</div>
+      <div class="q7-option" data-value="C">3</div>
+      <div class="q7-option" data-value="D">67</div>
+    </div>
+
+    <button id="q7SubmitBtn">Submit</button>
+  </div>
+</div>
+
+
+
+
+
+<!-- FINAL RESULTS PAGE -->
+<div id="finalResults" class="question-section hidden" style="background-color: #2b2b2b; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="results-box" style="background: white; padding: 40px; border-radius: 12px; text-align: center; width: 400px; position: relative;">
+    <h2 style="font-size: 32px; margin-bottom: 20px;">calculating results...</h2>
+    <p id="resultsSubtext" style="font-size: 16px; color: #555; margin-bottom: 20px;">petting a goose...</p>
+
+    <div class="results-progress-container" style="width: 100%; height: 20px; background: #eee; border-radius: 10px; overflow: hidden;">
+      <div class="results-progress-bar" id="resultsProgress" style="width: 0%; height: 100%; background: #4CAF50; border-radius: 10px;"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FINAL RESULTS PAGE -->
+<div id="finalResults" class="question-section hidden" style="background-color: #2b2b2b; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="results-box" style="background: white; padding: 40px; border-radius: 12px; text-align: center; width: 400px; position: relative;">
+    <h2 style="font-size: 32px; margin-bottom: 20px;">calculating results...</h2>
+    <p id="resultsSubtext" style="font-size: 16px; color: #555; margin-bottom: 20px;">petting a goose...</p>
+
+    <div class="results-progress-container" style="width: 100%; height: 20px; background: #eee; border-radius: 10px; overflow: hidden;">
+      <div class="results-progress-bar" id="resultsProgressBar" style="width: 0%; height: 100%; background: #4CAF50; border-radius: 10px;"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- NEXT TAB (navy blue placeholder) -->
+<div id="q8" class="question-section hidden" style="background-color:#001f4d; min-height:100vh;"></div>
+
+
+
+
+
+
+
+  <!-- ERROR SCREEN (sibling of all questions) -->
+  <div id="errorScreen" class="screen hidden">
+    <div class="error-title">YOU FAILED</div>
+    <div class="error-reason" id="errorReason"></div>
+    <div class="error-subtext">if you'd like to retake the test, refresh this page :)</div>
+    <div class="error-image-box">
+      <img src="images/sad.gif" alt="sad">
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
